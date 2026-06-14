@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aroma Café — Where Every Sip Tells a Story</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <nav class="nav" id="navbar">
+    <div class="nav__logo">
+      <span class="nav__logo-icon">☕</span>
+      <!-- EDIT: Change "Aroma Café" to your café name -->
+      <span class="nav__logo-text">Soumen Café</span>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Visit Us</a></li>
+    </ul>
+    <a href="#contact" class="nav__cta">Reserve a Table</a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMobile()">Our Story</a></li>
+      <li><a href="#menu" onclick="closeMobile()">Menu</a></li>
+      <li><a href="#gallery" onclick="closeMobile()">Gallery</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Visit Us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-overlay"></div>
+
+    <!-- Steam Animation Canvas -->
+    <canvas class="hero__steam" id="steamCanvas"></canvas>
+
+    <!-- Floating particles -->
+    <div class="hero__particles" id="particles"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal-fade">Est. 2024 · Handcrafted with Love</p>
+      <!-- EDIT: Change tagline below -->
+      <h1 class="hero__title reveal-up">
+        Where Every<br />
+        <em>Sip Tells</em><br />
+        a Story
+      </h1>
+      <p class="hero__subtitle reveal-fade">
+        <!-- EDIT: Change description below -->
+        Specialty coffee, artisan pastries, and warm moments —<br />
+        curated for those who appreciate the finer things in life.
+      </p>
+      <div class="hero__actions reveal-up">
+        <a href="#menu" class="btn btn--primary">Explore Our Menu</a>
+        <a href="#about" class="btn btn--ghost">Our Story</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MARQUEE ═══════════════════════ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Specialty Coffee</span>
+      <span class="dot">✦</span>
+      <span>Fresh Pastries</span>
+      <span class="dot">✦</span>
+      <span>Artisan Brews</span>
+      <span class="dot">✦</span>
+      <span>Cozy Ambiance</span>
+      <span class="dot">✦</span>
+      <span>Premium Beans</span>
+      <span class="dot">✦</span>
+      <span>Daily Roasted</span>
+      <span class="dot">✦</span>
+      <span>Specialty Coffee</span>
+      <span class="dot">✦</span>
+      <span>Fresh Pastries</span>
+      <span class="dot">✦</span>
+      <span>Artisan Brews</span>
+      <span class="dot">✦</span>
+      <span>Cozy Ambiance</span>
+      <span class="dot">✦</span>
+      <span>Premium Beans</span>
+      <span class="dot">✦</span>
+      <span>Daily Roasted</span>
+      <span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__visual">
+          <div class="about__img-frame">
+            <!-- EDIT: Replace src with your café photo -->
+            <img
+              src="images/cafe-interior.jpg"
+              alt="Café Interior"
+              class="about__img"
+              onerror="this.parentElement.classList.add('img-placeholder')"
+            />
+            <div class="about__img-badge">
+              <span class="badge-number">5★</span>
+              <span class="badge-text">Rated Experience</span>
+            </div>
+          </div>
+          <div class="about__stats">
+            <div class="stat-card" data-count="12000">
+              <span class="stat-num" data-target="12000">0</span>
+              <span class="stat-label">Happy Cups Served</span>
+            </div>
+            <div class="stat-card" data-count="48">
+              <span class="stat-num" data-target="48">0</span>
+              <span class="stat-label">Menu Items</span>
+            </div>
+            <div class="stat-card" data-count="100">
+              <span class="stat-num" data-target="100">0</span>
+              <span class="stat-label">% Organic Beans</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__text">
+          <span class="section-eyebrow">Our Story</span>
+          <!-- EDIT: Change café name and story -->
+          <h2 class="section-title">A Café Born From<br /><em>Pure Passion</em></h2>
+          <p class="about__desc">
+            Aroma Café was born from a simple belief — that a great cup of coffee can transform your entire day. We source our beans directly from sustainable farms across Ethiopia, Colombia, and Sumatra, roasting them fresh every morning.
+          </p>
+          <p class="about__desc">
+            Our space is designed to be your third place — beyond home and work — where time slows down, and every visit feels like a small celebration.
+          </p>
+          <div class="about__features">
+            <div class="feature">
+              <div class="feature__icon">🌿</div>
+              <div>
+                <h4>Ethically Sourced</h4>
+                <p>Direct trade with farmers who share our values</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature__icon">🔥</div>
+              <div>
+                <h4>Fresh Daily Roast</h4>
+                <p>Beans roasted in-house every morning</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature__icon">🎨</div>
+              <div>
+                <h4>Latte Art Masters</h4>
+                <p>Every cup crafted with precision and care</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MENU ═══════════════════════ -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">What We Offer</span>
+        <h2 class="section-title">Our Signature <em>Menu</em></h2>
+        <p class="section-subtitle">Every item crafted with the finest ingredients and unwavering attention to detail.</p>
+      </div>
+
+      <div class="menu__tabs">
+        <button class="menu-tab active" data-tab="coffee">Coffee</button>
+        <button class="menu-tab" data-tab="teas">Teas & More</button>
+        <button class="menu-tab" data-tab="food">Food</button>
+        <button class="menu-tab" data-tab="specials">Specials</button>
+      </div>
+
+      <!-- EDIT: Update menu items, prices, and descriptions -->
+      <div class="menu__grid" id="menuGrid">
+        <!-- Coffee items (default shown) -->
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__emoji">☕</div>
+          <h3>Signature Espresso</h3>
+          <p>Double shot, rich crema, velvety finish</p>
+          <span class="menu-card__price">$4.50</span>
+        </div>
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__emoji">🥛</div>
+          <h3>Vanilla Cloud Latte</h3>
+          <p>Espresso, steamed milk, Madagascar vanilla</p>
+          <span class="menu-card__price">$6.00</span>
+        </div>
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__emoji">🍫</div>
+          <h3>Dark Mocha</h3>
+          <p>Espresso, 70% dark chocolate, oat milk</p>
+          <span class="menu-card__price">$6.50</span>
+        </div>
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__emoji">❄️</div>
+          <h3>Cold Brew Tonic</h3>
+          <p>18-hr cold brew, sparkling tonic, citrus peel</p>
+          <span class="menu-card__price">$7.00</span>
+        </div>
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__emoji">🌸</div>
+          <h3>Rose Cortado</h3>
+          <p>Espresso, rosewater, steamed whole milk</p>
+          <span class="menu-card__price">$5.50</span>
+        </div>
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__emoji">✨</div>
+          <h3>Aroma Special</h3>
+          <p>Our secret blend — ask the barista today</p>
+          <span class="menu-card__price">$7.50</span>
+        </div>
+
+        <!-- Tea items -->
+        <div class="menu-card hidden" data-category="teas">
+          <div class="menu-card__emoji">🍵</div>
+          <h3>Matcha Ceremony</h3>
+          <p>Ceremonial grade matcha, oat milk, honey</p>
+          <span class="menu-card__price">$6.00</span>
+        </div>
+        <div class="menu-card hidden" data-category="teas">
+          <div class="menu-card__emoji">🌺</div>
+          <h3>Hibiscus Bloom</h3>
+          <p>Cold hibiscus, elderflower, sparkling water</p>
+          <span class="menu-card__price">$5.50</span>
+        </div>
+        <div class="menu-card hidden" data-category="teas">
+          <div class="menu-card__emoji">🫖</div>
+          <h3>Masala Chai</h3>
+          <p>Spiced tea, steamed milk, cardamom, ginger</p>
+          <span class="menu-card__price">$5.00</span>
+        </div>
+        <div class="menu-card hidden" data-category="teas">
+          <div class="menu-card__emoji">🍋</div>
+          <h3>Lemon Verbena</h3>
+          <p>Fresh herb tea, lemon, raw honey drizzle</p>
+          <span class="menu-card__price">$4.50</span>
+        </div>
+
+        <!-- Food items -->
+        <div class="menu-card hidden" data-category="food">
+          <div class="menu-card__emoji">🥐</div>
+          <h3>Butter Croissant</h3>
+          <p>Flaky, layered, baked fresh every morning</p>
+          <span class="menu-card__price">$4.00</span>
+        </div>
+        <div class="menu-card hidden" data-category="food">
+          <div class="menu-card__emoji">🫙</div>
+          <h3>Overnight Oats</h3>
+          <p>Oats, seasonal fruit, chia seeds, almond milk</p>
+          <span class="menu-card__price">$8.00</span>
+        </div>
+        <div class="menu-card hidden" data-category="food">
+          <div class="menu-card__emoji">🥪</div>
+          <h3>Avocado Toast</h3>
+          <p>Sourdough, smashed avo, poached egg, chilli flakes</p>
+          <span class="menu-card__price">$12.00</span>
+        </div>
+        <div class="menu-card hidden" data-category="food">
+          <div class="menu-card__emoji">🍰</div>
+          <h3>Olive Oil Cake</h3>
+          <p>Lemon zest, olive oil, dusted with powdered sugar</p>
+          <span class="menu-card__price">$6.00</span>
+        </div>
+
+        <!-- Specials -->
+        <div class="menu-card hidden special" data-category="specials">
+          <div class="menu-card__emoji">🌟</div>
+          <h3>Weekend Brunch Box</h3>
+          <p>2 coffees + avocado toast + seasonal pastry</p>
+          <span class="menu-card__price">$24.00</span>
+        </div>
+        <div class="menu-card hidden special" data-category="specials">
+          <div class="menu-card__emoji">🎁</div>
+          <h3>Gift a Coffee</h3>
+          <p>Send a coffee to someone you love — we deliver joy</p>
+          <span class="menu-card__price">From $15</span>
+        </div>
+        <div class="menu-card hidden special" data-category="specials">
+          <div class="menu-card__emoji">☁️</div>
+          <h3>Monthly Brew Box</h3>
+          <p>Rotating single origins, tasting notes included</p>
+          <span class="menu-card__price">$45/mo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+  <section class="experience section">
+    <div class="container">
+      <div class="experience__inner">
+        <div class="experience__text">
+          <span class="section-eyebrow light">The Experience</span>
+          <h2 class="section-title light">More Than <em>Coffee</em><br />— a Feeling</h2>
+          <p style="color: rgba(245,237,214,0.75); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">
+            <!-- EDIT: Update with your café's vibe -->
+            Step inside and let the aroma greet you. We've designed every corner of our café to invite you to slow down, breathe, and be present. Whether you're working, meeting a friend, or simply treating yourself — this is your space.
+          </p>
+          <a href="#contact" class="btn btn--gold">Plan Your Visit</a>
+        </div>
+        <div class="experience__cards">
+          <div class="exp-card">
+            <div class="exp-card__icon">🎵</div>
+            <h4>Curated Playlist</h4>
+            <p>Jazz, indie folk, and ambient — every visit has its own soundtrack</p>
+          </div>
+          <div class="exp-card">
+            <div class="exp-card__icon">📚</div>
+            <h4>Reading Nook</h4>
+            <p>A quiet corner stocked with books for those who need to escape</p>
+          </div>
+          <div class="exp-card">
+            <div class="exp-card__icon">🌿</div>
+            <h4>Living Walls</h4>
+            <p>Floor-to-ceiling greenery that breathes life into every visit</p>
+          </div>
+          <div class="exp-card">
+            <div class="exp-card__icon">⚡</div>
+            <h4>Fast Wi-Fi</h4>
+            <p>Reliable connection for remote workers and creators</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ GALLERY ═══════════════════════ -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">A Glimpse Inside</span>
+        <h2 class="section-title">Our <em>Gallery</em></h2>
+      </div>
+    </div>
+    <!-- EDIT: Replace these image src with your café photos -->
+    <div class="gallery__grid">
+      <div class="gallery__item gallery__item--tall" style="--bg: 'images/gallery-1.jpg'">
+        <img src="images/gallery-1.jpg" alt="Café ambiance" onerror="this.parentElement.classList.add('img-placeholder'); this.remove()" />
+        <div class="gallery__overlay"><span>Morning Light</span></div>
+      </div>
+      <div class="gallery__item" style="--bg: 'images/gallery-2.jpg'">
+        <img src="images/gallery-2.jpg" alt="Coffee art" onerror="this.parentElement.classList.add('img-placeholder'); this.remove()" />
+        <div class="gallery__overlay"><span>Latte Art</span></div>
+      </div>
+      <div class="gallery__item" style="--bg: 'images/gallery-3.jpg'">
+        <img src="images/gallery-3.jpg" alt="Pastries" onerror="this.parentElement.classList.add('img-placeholder'); this.remove()" />
+        <div class="gallery__overlay"><span>Fresh Bakes</span></div>
+      </div>
+      <div class="gallery__item gallery__item--wide" style="--bg: 'images/gallery-4.jpg'">
+        <img src="images/gallery-4.jpg" alt="Interior" onerror="this.parentElement.classList.add('img-placeholder'); this.remove()" />
+        <div class="gallery__overlay"><span>Our Space</span></div>
+      </div>
+      <div class="gallery__item" style="--bg: 'images/gallery-5.jpg'">
+        <img src="images/gallery-5.jpg" alt="Cold brew" onerror="this.parentElement.classList.add('img-placeholder'); this.remove()" />
+        <div class="gallery__overlay"><span>Cold Brew</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Loved By Many</span>
+        <h2 class="section-title">What Our Guests <em>Say</em></h2>
+      </div>
+      <!-- EDIT: Add real testimonials -->
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The best espresso I've had outside of Italy. The atmosphere is perfect — I come here every morning before work. It genuinely makes my day better."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <strong>Sarah M.</strong>
+              <span>Regular since Day 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The cold brew tonic changed my life. I'm only half joking. This café has become my creative studio — the energy here is just right."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div>
+              <strong>James T.</strong>
+              <span>Freelance Designer</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The olive oil cake is absolutely divine. Everything here feels handcrafted with real intention. You can taste the love in every bite and sip."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">P</div>
+            <div>
+              <strong>Priya K.</strong>
+              <span>Food Blogger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info">
+          <span class="section-eyebrow">Find Us</span>
+          <h2 class="section-title">Come <em>Visit Us</em></h2>
+          <!-- EDIT: Update all contact details below -->
+          <div class="contact__details">
+            <div class="contact__item">
+              <div class="contact__icon">📍</div>
+              <div>
+                <h4>Address</h4>
+                <p>123 Coffee Lane, Brew District<br />Your City, YC 10001</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon">🕐</div>
+              <div>
+                <h4>Hours</h4>
+                <p>Mon – Fri: 7:00 AM – 9:00 PM<br />Sat – Sun: 8:00 AM – 10:00 PM</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon">📞</div>
+              <div>
+                <h4>Contact</h4>
+                <p>+1 (555) 123-4567<br />hello@aromacafe.com</p>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon">📱</div>
+              <div>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                  <a href="#" class="social-link">Instagram</a>
+                  <a href="#" class="social-link">Facebook</a>
+                  <a href="#" class="social-link">TikTok</a>
+                </div>
+              </div>
+            </div>
